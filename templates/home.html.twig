@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container" >
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 headerBorder">
+            <ul class="nav nav-pills">
+                <li class="nav-item text-end"><a href="{{ path('app_home') }}" class="btn btn-md btn-danger {% if results['status'] == false %} disabled {% endif %}">Distribute Cards</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% if results['status'] %}
+            <div class="col-sm-6 sortedCards">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-ms-6">
+                                <h3>✔ Sorted Cards
+                                    <span class="cardLength"> ({{ results.sorted|length }})</span>
+                                </h3>
+                                <br>
+                            </div>
+                            {% for sortedcard in results.sorted %}
+                                <div class="col-sm-3">
+                                    <img src="{{ asset('cards/'~sortedcard) }}" class="img-fluid cardImg" alt="{{ sortedcard }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 unsortedCards" >
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-ms-6">
+                                <h3>✘ UnSorted Cards <span class="cardLength"> ({{ results.notSorted|length }})</span></h3>
+                                <br>
+                            </div>
+                            {% for unsortedcard in results.notSorted %}
+                                <div class="col-sm-2">
+                                    <img src="{{ asset('cards/'~unsortedcard) }}" class="img-fluid cardImg">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        Not enough cards to deal the game
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

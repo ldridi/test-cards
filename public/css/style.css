@@ -1,0 +1,27 @@
+.cardLength {
+    color:red!important;
+}
+
+.cardImg {
+    margin-bottom: 20px;
+}
+
+.unsortedCards {
+    border-left: 5px dotted #D83939;
+    height: 80vh;
+    padding-left: 30px!important;
+}
+
+.sortedCards {
+    padding-right: 30px!important;
+}
+
+.headerBorder{
+    border-bottom: 5px dotted #D83939;
+    padding-bottom: 40px!important;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
