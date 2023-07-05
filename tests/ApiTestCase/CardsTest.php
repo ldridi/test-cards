@@ -12,11 +12,8 @@ final class CardsTest extends TestCase
      */
     public function testDisponibilityOfCards()
     {
-        $card = new Cards();
-        $card->distribute(32,
-            10
-        );
-
+        $card = new Cards(32, 10);
+        $card->distribute();
         self::assertTrue($card->results['status']);
     }
 
@@ -25,11 +22,8 @@ final class CardsTest extends TestCase
      */
     public function testNoDisponibilityOfCards()
     {
-        $card = new Cards();
-        $card->distribute(32,
-            100
-        );
-
+        $card = new Cards(32, 100);
+        $card->distribute();
         self::assertFalse($card->results['status']);
     }
 }

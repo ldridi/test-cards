@@ -25,3 +25,7 @@ a.disabled {
     pointer-events: none;
     cursor: default;
 }
+
+.orderTitle {
+    color: #308D46;
+}

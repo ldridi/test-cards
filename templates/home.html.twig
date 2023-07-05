@@ -15,6 +15,10 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-ms-6">
+                                <h6 class="orderTitle">NUMBER ORDER : <p style="color:black!important;">['as', '5', '10', '8', '6', '7', '4', '2', '3', '9', 'dame', 'roi', 'valet']</p></h6>
+                                <h6 class="orderTitle">COLOR CHOOSEN : <p style="color:black!important;">['carreau', 'coeur', 'pique', 'trefle']</p></h6>
+                                <h6 class="orderTitle">NOTICE : <p style="color:black!important;">the first order is made via the number of cards, if several successive cards have the same number, we change the order of these by card color</p></h6>
+                                <br>
                                 <h3>✔ Sorted Cards
                                     <span class="cardLength"> ({{ results.sorted|length }})</span>
                                 </h3>
@@ -22,7 +26,7 @@
                             </div>
                             {% for sortedcard in results.sorted %}
                                 <div class="col-sm-3">
-                                    <img src="{{ asset('cards/'~sortedcard) }}" class="img-fluid cardImg" alt="{{ sortedcard }}">
+                                    <img src="{{ asset('cards/'~sortedcard.img) }}" class="img-fluid cardImg" alt="{{ sortedcard.img }}">
                                 </div>
                             {% endfor %}
                         </div>
@@ -39,7 +43,7 @@
                             </div>
                             {% for unsortedcard in results.notSorted %}
                                 <div class="col-sm-2">
-                                    <img src="{{ asset('cards/'~unsortedcard) }}" class="img-fluid cardImg">
+                                    <img src="{{ asset('cards/'~unsortedcard.img) }}" class="img-fluid cardImg" alt="{{ unsortedcard.img }}">
                                 </div>
                             {% endfor %}
                         </div>

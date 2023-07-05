@@ -1,5 +1,9 @@
 # Introduction
 - > Develop a deck of cards for 1 player with 10 cards in hand
+- > NUMBER ORDER : ['as', '5', '10', '8', '6', '7', '4', '2', '3', '9', 'dame', 'roi', 'valet']
+- >  COLOR CHOOSEN : ['carreau', 'coeur', 'pique', 'trefle']
+
+- > NOTICE : the first order is made via the number of cards, if several successive cards have the same number, we change the order of these by card color  
 
 # Stacks technique
 - > PHP 8 
